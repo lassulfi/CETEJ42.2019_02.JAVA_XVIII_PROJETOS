@@ -1,0 +1,45 @@
+Nome: Luis Daniel Assulfi
+Disciplina: CETEJ42 - Teste de Software - JAVA_XVIII (2019_02)
+
+1. Explique as fases do teste (unidade, integração e sistema).
+Resp.: Testes de unidade são testes onde cada unidade do sistema é testada individualmente. O objetivo dos testes de unidade é isolar cada parte do sistema e garantir que essas partes estão funcionando conforme o especificado, porém não garante que a integração dessas partes irá funcionar corretamente. Um exemplo já até descrito no material didático é a validação do CPF: o teste desta função se resume apenas em checar se a função é capaz de dizer se o CPF é válido ou não.
+Na fase de testes de integração as unidades do sistema são testadas de maneira combinada, com o objetivo de detectar falhas de integração entre as unidades integradas. Não é o escopo desta fase a integração do sistema com outros sistemas. Um exemplo é o teste de integração do cadastro de clientes com a função que valida CPF: as duas unidades já foram testadas individualmente na fase de testes de unidade, porém nesta fase a interação entre elas é validada. 
+Na fase de testes de sistema o sistema é testado como um todo. Nesta fase todas as funcionalidades são testadas, assim como as integrações com outros sistemas que possam existir. Nesta fase os testes não se limitam apenas a requisitos funcionais, mas sim também requisitos não funcionais.
+Referências: http://www.matera.com/blog/post/fases-de-testes-de-software
+
+2. Explique as técnicas de teste (funcional e estrutural).
+O teste estrututal é também conhecido como teste de caixa branca, sendo que esse teste possui o objetivo testar o código fonte, passando por todas as linhas de código e testando os fluxos básicos e alternativos. Os testes funcionais podem ser classificados da seguinte forma:
+- Stress: verifica como o sistema é executado com determinados volumes de dados;
+- Execução: verifica se o sistema atinge o nível desejado de eficiência;
+- Recuperação Contingência: verifica se o sistema é capaz de retornar o nível alterior antes da falha;
+- Operação: verifica se o sistema opera conforme sua documentação;
+- Compliance: verifica se o sistema foi desenvolvido conforme padrões e procedimentos;
+- Segurança: verifica se o sistema está protegido conforme normas e políticas da organização.
+
+O teste funcional é também conhecido como teste da caixa preta, sendo que este teste é baseado na análise funcional do software e garante que os requisitos funcionem conforme o especificado. Esse teste não se preocupa com a implementação, sendo inseridos dados e espera-se como resultado os requisitos projetados. Esses testes também podem ser classificados como segue:
+- Requisitos: verifica se o sistema ou alguma parte dele foi alterado por alguma alteração;
+- Regressão: verifica se o sistema ou alguma parte dele foi afetado por alguma alteração;
+- Tratamento de erros: verifica se os possíveis erros que possam acontecer tem o tratamento antes de acontecer suas falhas;
+- Manual: verifica a interação entre homem e máquina;
+- Interfaces de integração: verifica se o sistema troca informações com outros sistemas;
+- Controle: verifica se o sistema tem algum controle de dados, validações e integridade, logs de auditoria;
+- Paralelismo: Se a versão nova ou a antiga gera os mesmos resultados.
+Referências: https://www.devmedia.com.br/testes-de-software-tecnicas/22283
+
+3. Explique o critério de teste funcional particionamento em classes de equivalência?
+O particionamento de equivalência reduz um conjunto de entradas de grande (infinito) a um conjunto pequeno (finito), mas eficiente. Essa critério divide o domínio de entrada de um software em classes de dados a partir das quais os casos de testes podem ser derivados.
+Classes de equivalência representa um conjunto de estados válidos ou inválidos para as seguintes condições de entrada:
+- Duas ou mais classes são equivalentes se elas produzem o mesmo resultado;
+- Se uma situação funciona como esperado, então é possível assumir que a outra situação também funciona;
+- Deve conter entradas válidas e inválidas.
+Uma condição de entrada pode ser: um valor numérico, um intervalo de valores, um valor alfabético, etc;
+Outras condições de entrada:
+- Se a condição de entrada especifica um intervalo, então é definida uma classe de equivalência válida  e duas inválidas, como por exemplo: o campo de login deve ter entre 4 e 10 caracteres;
+- Se a condição de entrada requer um valor específico, então é definida uma classe de equivalência válida e duas inválidas, como por exemplo: O colaborador "A" deve estar associado ao departamento "4";
+- Se a condição de entrada especifica um membro de um conjunto, então é definida uma classe de equivalência válida e uma inválida, como por exemplo, o login deve ser deve aceitar somente letras.
+Um exemplo de critério de particionamento é a validação do método para validar uma nova senha, que deve receber como parâmetro uma senha e valida conforme as seguintes regras:
+- A senha deve ter de 6 a 10 caracteres;
+- O primeiro caracter deve ser alfabético, numérico ou "?";
+- Os demais caracteres podem ser quaisquer, deste que não sejam caracteres especiais;
+- A senha não pode estar previamente cadastrada em uma base;
+Referências: https://guimaraesdani.wordpress.com/testes-e-qualidade-de-software/tecnicas-de-teste-de-software/
