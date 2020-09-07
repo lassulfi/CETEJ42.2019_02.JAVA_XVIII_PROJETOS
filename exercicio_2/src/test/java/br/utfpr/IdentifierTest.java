@@ -79,9 +79,8 @@ public class IdentifierTest {
     @Test(expected = IdentifierException.class)
     public void shouldThrownAnExceptionIfIndetifierIsNull() throws IdentifierException {
         //parte 1: cenário
-        String identifier = null;
         //parte 2: ação
-        this.identifier.identify(identifier);
+        this.identifier.identify(null);
         //parte 3: validação
     }
 }
