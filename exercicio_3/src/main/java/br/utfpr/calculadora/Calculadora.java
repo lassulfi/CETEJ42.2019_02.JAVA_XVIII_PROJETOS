@@ -29,7 +29,7 @@ public class Calculadora {
     private void validarSalarioBaseNegativo(double salarioBase)
             throws FuncionarioException {
         if(salarioBase <= 0) {
-            throw new FuncionarioException("Salário-base deve ser positivo");
+            throw new FuncionarioException("Salário-base deve ser positivo e maior que zero");
         }
     }
 

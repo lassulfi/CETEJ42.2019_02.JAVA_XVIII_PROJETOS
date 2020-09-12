@@ -22,9 +22,9 @@ public class CalculadoraTest {
     @Test
     public void deveCalcularSalarioParaDesenvolvedor() throws FuncionarioException {
         double salario1 = calculadora.calcularSalario(new Funcionario("Fulando de Tal",
-                3000.00, CargoEnum.DESENVOLVEDOR));
+                "fulano@email.com", 3000.00, CargoEnum.DESENVOLVEDOR));
         double salario2 = calculadora.calcularSalario(new Funcionario("Ciclano Beltrano",
-                5000.00, CargoEnum.DESENVOLVEDOR));
+                "ciclano@email.com", 5000.00, CargoEnum.DESENVOLVEDOR));
 
         assertThat(2700.00, equalTo(salario1));
         assertThat(4000.00, equalTo(salario2));
@@ -33,9 +33,9 @@ public class CalculadoraTest {
     @Test
     public void deveCalcularSalarioParaDBA() throws FuncionarioException {
         double salario1 = calculadora.calcularSalario(new Funcionario("Fulando de Tal",
-                2000.00, CargoEnum.DBA));
+                "fulano@email.com",2000.00, CargoEnum.DBA));
         double salario2 = calculadora.calcularSalario(new Funcionario("Ciclano Beltrano",
-                5000.00, CargoEnum.DBA));
+                "ciclano@email.com",5000.00, CargoEnum.DBA));
 
         assertThat(1700.00, equalTo(salario1));
         assertThat(3750.00, equalTo(salario2));
@@ -44,9 +44,9 @@ public class CalculadoraTest {
     @Test
     public void deveCalcularSalarioParaTestador() throws FuncionarioException {
         double salario1 = calculadora.calcularSalario(new Funcionario("Fulando de Tal",
-                2000.00, CargoEnum.TESTADOR));
+                "fulano@email.com",2000.00, CargoEnum.TESTADOR));
         double salario2 = calculadora.calcularSalario(new Funcionario("Ciclano Beltrano",
-                5000.00, CargoEnum.TESTADOR));
+                "ciclano@email.com",5000.00, CargoEnum.TESTADOR));
 
         assertThat(1700.00, equalTo(salario1));
         assertThat(3750.00, equalTo(salario2));
@@ -55,9 +55,9 @@ public class CalculadoraTest {
     @Test
     public void deveCalcularSalarioGerente() throws FuncionarioException {
         double salario1 = calculadora.calcularSalario(new Funcionario("Fulando de Tal",
-                5000.00, CargoEnum.GERENTE));
+                "fulano@email.com", 5000.00, CargoEnum.GERENTE));
         double salario2 = calculadora.calcularSalario(new Funcionario("Ciclano Beltrano",
-                8000.00, CargoEnum.GERENTE));
+                "ciclano@email.com", 8000.00, CargoEnum.GERENTE));
 
         assertThat(4000.00, equalTo(salario1));
         assertThat(5600.00, equalTo(salario2));
@@ -66,14 +66,21 @@ public class CalculadoraTest {
     @Test(expected = FuncionarioException.class)
     public void deveLancarExcecaoParaCargosNaoCadastrados() throws FuncionarioException {
         calculadora.calcularSalario(new Funcionario("Fulando de Tal",
-                5000.00, CargoEnum.AUXILIAR));
+                "fulano@email.com", 5000.00, CargoEnum.AUXILIAR));
         Assert.fail();
     }
 
     @Test(expected = FuncionarioException.class)
     public void deveLancarExcecaoParaSalarioBaseNegativo() throws FuncionarioException {
         calculadora.calcularSalario(new Funcionario("Fulando de Tal",
-                -1000.00, CargoEnum.GERENTE));
+                "fulano@email.com", -1000.00, CargoEnum.GERENTE));
         Assert.fail();
     }
-}
+
+    @Test(expected = FuncionarioException.class)
+    public void deveLancarExcecaoParaSalarioNulo() throws FuncionarioException {
+        calculadora.calcularSalario(new Funcionario("Fulano de Tal",
+                "fulano@email.com", 0.00, CargoEnum.GERENTE));
+        Assert.fail();
+    }
+ }

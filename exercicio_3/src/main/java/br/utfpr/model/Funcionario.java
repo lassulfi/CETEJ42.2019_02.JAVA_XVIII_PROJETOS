@@ -5,11 +5,13 @@ import br.utfpr.enums.CargoEnum;
 public class Funcionario {
 
     private String nome;
+    private String email;
     private double salarioBase;
     private CargoEnum cargo;
 
-    public Funcionario(String nome, double salarioBase, CargoEnum cargo) {
+    public Funcionario(String nome, String email, double salarioBase, CargoEnum cargo) {
         this.nome = nome;
+        this.email = email;
         this.salarioBase = salarioBase;
         this.cargo = cargo;
     }
@@ -20,6 +22,14 @@ public class Funcionario {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public double getSalarioBase() {
