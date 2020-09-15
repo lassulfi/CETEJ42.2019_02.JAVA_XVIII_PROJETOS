@@ -3,9 +3,9 @@ package br.utfpr.craps.dominio;
 public class Craps {
     private int soma, ponto, vencedor;
     private boolean primeiraRodada = true;
-    private Dado dado;
+    private IDado dado;
 
-    public Craps(Dado dado) {
+    public Craps(IDado dado) {
         this.dado = dado;
     }
 
