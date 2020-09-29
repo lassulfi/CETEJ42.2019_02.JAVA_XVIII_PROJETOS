@@ -1,0 +1,23 @@
+Nome: Luis Daniel Assulfi
+
+Disciplina: CETEJ42 - Teste de Software - JAVA_XVIII (2019_02)
+
+Exercício 06 - Questionário sobre Testes de Integração
+
+Questão 1: Apresente as diferença entre testes de unidade e integração.
+Resposta: Testes unitários tem a finalidade de testar componentes unitários do software, como componentes e métodos. Os testes de unidade (ou unitários) testam classes e métodos isoladamente, sem interagir com outras classes e/ ou demais componentes ou componentes externos ao software. Testes de integração, ao contrário de testes unitários, visa validar de métodos, classes e componentes de software com outros componentes ou até outros softwares. Um exemplo de testes de integração são os testes de integração de uma classe DAO (Data Access Object).
+
+Questão 2: Como limpar o banco de dados durante os testes de integração?
+Resposta: Após a realização de um teste de integração o banco de dados pode ser limpo através de um rollback ao final do teste. Para isso deve-se implementar um método publico com a anotação @After do JUnit. Esse método é executado sempre após a execução do teste. A implementação do rollback é a seguinte:
+@After
+public void tearDown() {
+    // faz o rollback
+    session.getTransaction().rollback();
+    session.close();
+}
+
+Questão 3: Quais as vantagens e/ou desvantagens de usar Scripts para popular o banco durante os testes de integração?
+Resposta: A vantagem da utilização de scripts para popular banco de dados é que os testes ficam com menos instruções para criação de entidades de testes, uma vez que os scripts podem ser carregados antes e após a execução dos testes. A desvantagem da utilização de scripts é que devem ser executados por outro software, que geralmente é o SGPD. caso ocorra alguma falha no script ou o script não seja executado em condições específicas para validação os testes podem falhar, pois devemos manter o estado do sistema consistente.
+
+Questão 4: Devemos testar até métodos simples (por exemplo, salvar um usuário utilizando o Hibernate) durante os testes de integração?
+Resposta: Apesar de parecem simples, alguns métodos como salvar um usuário ou excluir um usuário utilizando o Hibernate devem ser testados pois o objetivo dos testes de integração é validar como o método da classe se comunica com o outro serviço. No caso do Hibernate queremos verificar como a classe testada iterage com o banco de dados, realizando uma comunicação real com ele. Utilizar do artíficio do Mock para situações onde temos operações simples tornaria o teste inútil, pois não teríamos o feedback ideal.
