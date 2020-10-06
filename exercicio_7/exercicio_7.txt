@@ -1,0 +1,23 @@
+Nome: Luis Daniel Assulfi
+
+Disciplina: CETEJ42 - Teste de Software - JAVA_XVIII (2019_02)
+
+Exercício 07 - Questionário sobre Testes de Sistema
+
+Questão 1: Explique o que é o teste de sistema.
+Resp.: Um teste de sistema é um teste realizado com a intenção de exercitar a aplicação do ponto de vista do usuário final, como um todo, sem conhecer seus detalhes internos. Testes de sistema são muito similares a testes de caixa preta, já que não sabemos os detalhes da implementação. Caso a aplicação seja uma aplicação web, o teste de sistema deverá navegar pela interface web, interagir com ela, persistir os dados fornecidos durante o teste no banco de dados, consumir os serviços web etc. Caso a aplicação seja uma API, o teste do sistema deverá consumir os recursos expostos conforme as interfaces definidas. A vantagem desse tipo de teste é que ele é muito parecido com o teste que o usuário faz com a aplicação. Uma comparação com os testes de unidade é que estes testes visam garantir como a classe funciona. Um software em produção faz o uso de diversas classes juntas e, para garantir essa integração correta entre as classes, os testes de sistema garantem essa integração.
+
+Questão 2: Explique o que é o teste de aceitação.
+Resp.: O teste de aceitação é a ação de teste final antes da implementação do software. A meta do teste de aceitação é verificar se o software está pronto e pode ser utilizado pelos usuários, para desempenhar as funções e tarefas para as quais o software foi construído. Existem três estratégias comuns para a implementação de um teste de aceitação, e elas são:
+- Aceitação Formal;
+- Aceitação Informal ou Teste Alfa;
+- Teste Beta.
+
+O teste de aceitação formal é um processo altamente gerenciado e costuma ser uma extensão do teste do sistema. Os testes são planejados e projetados com o mesmo cuidado e no mesmo detalhe que o teste do sistema. Os casos de teste escolhidos devem ser um subconjunto dos que foram realizados no teste do sistema. É importante não desviar de nenhum dos casos de teste escolhidos. Em muitas organizações, o teste de aceitação formal é totalmente automatizado.
+
+No teste de aceitação informal, os procedimentos para executar o teste não são definidos com tanto rigor como no teste de aceitação formal. As funções e as atividades de negócios a serem exploradas são identificadas e documentadas, mas não há casos de teste específicos para seguir. O testador individual determina o que deve ser feito. Esta abordagem do teste de aceitação não é controlada como teste formal e é mais subjetiva que o tipo formal. Esse teste é realizado com mais frequência pela organização do usuário final.
+
+O teste beta é o menos controlado das três estratégias de teste de aceitação. No teste beta, a quantidade de detalhes, os dados e a abordagem adotadas são de inteira escolha do testador individual. Cada testador é responsável por criar o próprio ambiente, selecionar os dados correspondentes e determinar as funções, os recursos ou as tarefas a serem exploradas. Cada um deles é responsável por identificar seus próprios critérios para aceitar, ou não, o sistema em seu estado atual.
+
+Questão 3: Qual a diferença entre o teste de sistema e o teste de aceitação?
+Resp.: Os testes de sistema consideram o software dentro dentro do seu ambiente mais amplo, que são todos os apectos de interação com o software, iteração com outros hardwares, pessoas etc... Além disso esses testes correspondem a uma série de testes que tem por objetivo verificar se todos os elementos do sistema foram integrados adequadamente e realizam corretamente suas funções. Já um teste de aceitação considera o software montado como um pacote e validação do mesmo é feita através de uma série de testes caixa preta, ou seja, sem detalhes da implementação. Dada essa característica do teste de aceitação, a sua finalidade é então demonstrar a conformidade aos requisitos funcionais e de desempenho e verificar se a documentação está correta e o resultado dessa validação é se o software está aceito ou se não está totalmente de acordo com os requisitos, sendo que na negativa deve ser responsabilidade do desenvolvedor negociar com o usuário. Os testes de aceitação são os testes realizados pelo próprio usuário final ou,no caso de softwares desenvolvidos para vários usuários, testes alfa, que são testes realizados pelo usuário no ambiente do desenvolvedor e testes beta, que são testes realizados pelo usuário em seu próprio ambiente.
