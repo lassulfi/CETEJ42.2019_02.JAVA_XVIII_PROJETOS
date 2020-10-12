@@ -1,0 +1,14 @@
+Nome: Luis Daniel Assulfi
+
+Disciplina: CETEJ42 - Teste de Software - JAVA_XVIII (2019_02)
+
+Exercício 08 - Teste de Sistema - Nada o impede de rodar a mesma bateria de testes de sistema para os mais diferentes browsers
+
+Questão 1: O que deve ser feito no código para que seja possível realizar os mesmos testes em um browser diferente?
+Resp.: Para a aplicação de Leilões pode alterar o método inicializa, alterando a instanciação do WebDriver através de uma estrutura condicional. Outra solução seria alterar a classe CriadorDeCenários para receber um parâmetro tipo String ou tipo enumerado que define o tipo de browser a ser utilizado para o testes ao invés do driver propriamente dito. Depedendendo do parâmetro informado no construtor da Classe ConstrutorDeCenários, através de uma estrutura condicional podemos instanciar o driver para cada tipo de navegador.
+
+Questão 2: Será que definir estaticamente em diversas partes do nosso código qual browser a ser utilizado é a melhor estratégia?
+Resp.: Acredito que esta estratégia não seja a melhor estratégia, pois isso tornará mais complicado a manutenção dos testes, já que, para cobrir a maioria dos navegadores disponíveis será necessário criar mais cenários de testes. Além disso, os testes serão mais demorados pois irão cobrir mais cenários. Outro problema que podemos encontrar é a descontinuidade de navegadores ou surgimento de novos navegadores. Isso irá impactar também na manutenção dos testes, já que será necessário manter os testes em conformidade com os navegadores disponíveis. 
+
+Questão 3: Nesse contexto, faça uma breve pesquisa sobre o BrowserStack?
+Resp.: BrowserStack é uma plataforma em nuvem para testes de aplicações web e mobile, permitindo que desenvolvedores testes seus websites e suas aplicações mobile em diferentes browsers, sistemas operações e dispositivos mobile reais. A vantagem do BrowserStack é que ele não requer que seus usuários instalem ou mantenham um conjunto de máquinas virtuais, aparelhos ou emuladores, pois seus serviços são disponibilizados através de uma API Rest, sendo que podem ser testados tanto aplicações publicadas como aplicações em ambiente de desenvolvimento local. A BrowserStack possui quatro produtos principais: Live, App Live, Automate e App Automate.
