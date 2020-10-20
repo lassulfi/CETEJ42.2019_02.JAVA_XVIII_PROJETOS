@@ -1,0 +1,12 @@
+Nome: Luis Daniel Assulfi
+
+Disciplina: CETEJ42 - Teste de Software - JAVA_XVIII (2019_02)
+
+Exercício 09 - Teste de Serviços Web
+
+Questão 1: A partir do guia de uso do Rest-Assured (https://github.com/rest-assured/rest-assured/wiki/Usage), cite e explique 3 desafios que ainda podem ser encontrados em testes de serviços web.
+Resp.: O Rest-Assured é um framework muito completo, ideal para testes de serviços Web, tanto em ambiente de desenvolvimento como de serviços web já disponíveis em ambiente de produção. Alguns dos desafios que podem ser encontrados em testes de sistemas web para o framework são:
+1 - Validação de serviços com Media-Type no formato yaml. Pela documentação do framework é possível verificar Media-Types json e xml, sendo que já existem serviços publicados em produção que aceitam receber objetos em formato yaml e retornam no formato yaml.
+2 - A manutenção dos testes deve ser levada em consideração. O releases de novas versões de webservices e APIs podem trazer erros aos testes existentes devido a mudanças de interfaces dos contratos desses serviços. Além disso faz-se necessária a criação de diferentes cenários de testes para diferentes versões de webservices e APIs, tornando a bateria de testes mais extensa.
+3 - O framework está disponível apenas para as linguagens Java, Kotlin e Groovy. Outros frameworks dão suporte a mais linguagens como, por exemplo, Node, Ruby, Python e o proprio Java, tornando a sua abrangência pela comunidade de desenvolvedores maior que o Rest Assured.
+
