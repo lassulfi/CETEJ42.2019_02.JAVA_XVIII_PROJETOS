@@ -1,30 +1,27 @@
-Nome: Luis Daniel Assulfi
+Avaliação
+Triângulo.
+Especifique um conjunto de casos de teste para testar o programa a seguir:
+- O programa lê três valores inteiros que representam os lados de um triângulo. O programa informa se os lados formam um triângulo isósceles, escaleno ou equilatero. Condição: a soma de dois lados tem que ser maior que o terceiro lado.
+    1. (i) Implemente a classe Java que resolva o problema acima (obrigatoriamente utilizar exceções).
+    2. (ii) Escreva casos de teste em JUnit para as seguintes situações:
+- Triângulo escaleno válido
 
-Disciplina: CETEJ42 - Teste de Software - JAVA_XVIII (2019_02)
+- Triângulo isósceles válido
 
-Avaliação - Introdução ao testes de Software
+- Triângulo equilatero válido
 
-Questão 1: Explique as fases do teste (unidade, integração e sistema).
-Resp.: As fases do teste de um sistema mencionadas são:
-- Testes de unidade: são testes onde cada unidade do sistema é testada individualmente, sendo seu objetivo isolar cada parte do sistema e garantir que estas partes funcionam conforme o especificado. Como esses testes são executados de forma isolada, não há como garantir que a integração entre as partes irá funcionar corretamente. Um exemplo é a validação do CPF: um teste de uma classe que implementa essa função consegue apenas validar se, caso seja informado um CPF, ele é válido ou não.
-- Testes de integração: Os testes de integração tem por objetivo testar as unidades de maneira combinada, buscando detectar falhas de integração entre as unidades integradas. Esta fase não visa validar a integração entre sistemas. Um exemplo de teste de integração é a integração entre a unindade responsável pelo cadastro de clientes e a unidade responsável pela validação de CPF: as duas unidades já foram testadas individualmente na fase de testes de unidade, porém, nessa fase é verificada como ocorrerá a integração entre essas unidades e detectar possíveis falhas.
-- Testes de sistema: Os testes de sistema consistem em testar o sistema como um todo, sendo nesta fase testadas todas as funcionalidades, incluindo as integrações com outros sistemas que possam existir. Esta fase não se restringe apenas a validar os requisitos funcionais, mas também, requisitos não funcionais do sistema.
+- Pelo menos 3 casos de teste (CTs) para isósceles válido contendo a permutação dos mesmos valores
 
-Questão 2: Explique as técnicas de teste (funcional e estrutural).
-Resp.: Os testes funcionais (também conhecidos como testes da caixa preta) baseiam-se na análise funcional do software e garantem que os requisitos funcionem conforme o especificado. Esse teste não se preocupa com a implementação e seus detalhes, sendo que nesse teste são inseridos dados e espera-se como resultado os requisitos projetados. Esses testes também são classificados como:
-- Requisitos e: verificam se o sistema é efetuado conforme suas especificações;
-- Regressão: verificam se o sistema ou alguma parte foi afetada por alguma alteração;
-- Tratamento de erros: verifica se os possíveis erros que possam acontecer tem o tratamento antes que as falhas ocorram;
-- Manual: verifica a interação entre homem e máquina;
-- Controle: verifica se o sistema tem algum controle de dados, validações e integridade, logs de auditoria;
-- Paralelismo: valida se a nova versão ou a antiga geram os mesmos resultados.
-Os testes estruturais (também conhecidos como testes de caixa branca) tem por objetivo testar o código fonte, passando por todas as linhas de código e testando os fluxos básico e alternativos. Esses testes podem ser classificados da seguinte forma:
-- Stress: verifica como o sistema é executado quando submetido a um determinado volume de dados;
-- Execução: verifica se o sistema atinge o núvel desejado de eficiência;
-- Recuperação Contingência: verifica se o sistema é capaz de retornar a um nível anterior ao acontecimento da falha;
-- Operação: verifica se o sistema opera conforme documentação;
-- Compliance: verifica se o sistema foi desenvolvido conforme padrões e procedimentos previamente definidos;
-- Segurança: verifica se o sistema está protegido conforme normas e políticas da organização.
+- Um valor zero
 
-Questão 3: Explique o critério de teste funcional particionamento em classes de equivalência?
-Resp.:
+- Um valor negativo
+
+- A soma de 2 lados é exatamente igual ao terceiro lado
+
+- Para o item acima, um CT para cada permutação de valores
+
+- CT em que a soma de 2 lados é menor que o terceiro lado
+
+- Para o item acima, um CT para cada permutação de valores
+
+- Um CT para os três valores iguais a zero
