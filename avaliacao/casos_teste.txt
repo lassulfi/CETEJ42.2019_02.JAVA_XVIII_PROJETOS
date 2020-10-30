@@ -1,11 +1,11 @@
-|  CT   | Dados de Entrada       | Condicao                                                        | Saída Esperada |
-| CT-01 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2 = l3)   | equilatero     |
-| CT-02 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2)        | isoceles       |
-| CT-03 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 != l2 != l3) | escaleno       |
-| CT-04 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2)        | isoceles       |
-| CT-05 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l3)        | isoceles       |
-| CT-06 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l2 = l3)        | isoceles       |
-| CT-07 | l1, l2, l3             | l1 = 0                                                          | invalido       |
+|  CT   | Dados de Entrada       | Condicao                                                        | Saída Esperada | Status   |
+| CT-01 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2 = l3)   | equilatero     | Validado |
+| CT-02 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2)        | isoceles       | Validado |
+| CT-03 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 != l2 != l3) | escaleno       | Validado |
+| CT-04 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2)        | isoceles       | Validado |
+| CT-05 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l3)        | isoceles       | Validado |
+| CT-06 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l2 = l3)        | isoceles       | Validado |
+| CT-07 | l1, l2, l3             | l1 = 0                                                          | invalido       | Validado |
 | CT-08 | l1, l2, l3             | l1 < 0                                                          | invalido       |
 | CT-09 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 = l1 + l2)                    | invalido       |
 | CT-10 | l1, l2, l3             | (l1 = l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2)                    | invalido       |
