@@ -6,11 +6,17 @@
 | CT-05 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l3)        | isoceles       | Validado |
 | CT-06 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l2 = l3)        | isoceles       | Validado |
 | CT-07 | l1, l2, l3             | l1 = 0                                                          | invalido       | Validado |
-| CT-08 | l1, l2, l3             | l1 < 0                                                          | invalido       | Validado |
-| CT-09 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 = l1 + l2)                    | invalido       | Validado |
-| CT-10 | l1, l2, l3             | (l1 = l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
-| CT-11 | l1, l2, l3             | (l1 > l2 + l3 e l2 = l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
-| CT-12 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 > l1 + l2)                    | invalido       | Validado |
-| CT-13 | l1, l2, l3             | (l1 > l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
-| CT-14 | l1, l2, l3             | (l1 < l2 + l3 e l2 > l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
-| CT-15 | l1 = 0, l2 = 0, l3 = 0 |                                                                 | invalido       | Validado |
+| CT-08 | l1, l2, l3             | l2 = 0                                                          | invalido       | Validado |
+| CT-09 | l1, l2, l3             | l3 = 0                                                          | invalido       | Validado |
+| CT-10 | l1, l2, l3             | l1 < 0                                                          | invalido       | Validado |
+| CT-11 | l1, l2, l3             | l2 < 0                                                          | invalido       | Validado |
+| CT-12 | l1, l2, l3             | l3 < 0                                                          | invalido       | Validado |
+| CT-13 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 = l1 + l2)                    | invalido       | Validado |
+| CT-14 | l1, l2, l3             | (l1 = l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
+| CT-15 | l1, l2, l3             | (l1 < l2 + l3 e l2 = l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
+| CT-16 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 = l1 + l2)                    | invalido       | Validado |
+| CT-17 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 > l1 + l2)                    | invalido       | Validado |
+| CT-18 | l1, l2, l3             | (l1 > l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
+| CT-19 | l1, l2, l3             | (l1 < l2 + l3 e l2 > l1 + l3 e l3 < l1 + l2)                    | invalido       | Validado |
+| CT-20 | l1 = 0, l2 = 0, l3 = 0 |                                                                 | invalido       | Validado |
+| CT-21 | l1 < 0, l2 < 0, l3 < 0 |                                                                 | invalido       | Validado |

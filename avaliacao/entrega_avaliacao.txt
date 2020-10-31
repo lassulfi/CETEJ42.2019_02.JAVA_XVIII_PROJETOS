@@ -1,3 +1,158 @@
+Nome: Luis Daniel Assulfi
+
+Disciplina: CETEJ42 - Teste de Software - JAVA_XVIII (2019_02)
+
+Avaliação
+
+Triângulo.
+Especifique um conjunto de casos de teste para testar o programa a seguir:
+- O programa lê três valores inteiros que representam os lados de um triângulo. O programa informa se os lados formam um
+ triângulo isósceles, escaleno ou equilatero. Condição: a soma de dois lados tem que ser maior que o terceiro lado.
+    1. (i) Implemente a classe Java que resolva o problema acima (obrigatoriamente utilizar exceções).
+    2. (ii) Escreva casos de teste em JUnit para as seguintes situações:
+- Triângulo escaleno válido
+
+- Triângulo isósceles válido
+
+- Triângulo equilatero válido
+
+- Pelo menos 3 casos de teste (CTs) para isósceles válido contendo a permutação dos mesmos valores
+
+- Um valor zero
+
+- Um valor negativo
+
+- A soma de 2 lados é exatamente igual ao terceiro lado
+
+- Para o item acima, um CT para cada permutação de valores
+
+- CT em que a soma de 2 lados é menor que o terceiro lado
+
+- Para o item acima, um CT para cada permutação de valores
+
+- Um CT para os três valores iguais a zero
+
+RESOLUÇÃO DA AVALIAÇÃO
+
+### Definição dos casos de testes ###
+
+|  CT   | Dados de Entrada       | Condicao                                                        | Saída Esperada |
+| CT-01 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2 = l3)   | equilatero     |
+| CT-02 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2)        | isoceles       |
+| CT-03 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 != l2 != l3) | escaleno       |
+| CT-04 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l2)        | isoceles       |
+| CT-05 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l1 = l3)        | isoceles       |
+| CT-06 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2) e (l2 = l3)        | isoceles       |
+| CT-07 | l1, l2, l3             | l1 = 0                                                          | invalido       |
+| CT-08 | l1, l2, l3             | l2 = 0                                                          | invalido       |
+| CT-09 | l1, l2, l3             | l3 = 0                                                          | invalido       |
+| CT-10 | l1, l2, l3             | l1 < 0                                                          | invalido       |
+| CT-11 | l1, l2, l3             | l2 < 0                                                          | invalido       |
+| CT-12 | l1, l2, l3             | l3 < 0                                                          | invalido       |
+| CT-13 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 = l1 + l2)                    | invalido       |
+| CT-14 | l1, l2, l3             | (l1 = l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2)                    | invalido       |
+| CT-15 | l1, l2, l3             | (l1 < l2 + l3 e l2 = l1 + l3 e l3 < l1 + l2)                    | invalido       |
+| CT-16 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 = l1 + l2)                    | invalido       |
+| CT-17 | l1, l2, l3             | (l1 < l2 + l3 e l2 < l1 + l3 e l3 > l1 + l2)                    | invalido       |
+| CT-18 | l1, l2, l3             | (l1 > l2 + l3 e l2 < l1 + l3 e l3 < l1 + l2)                    | invalido       |
+| CT-19 | l1, l2, l3             | (l1 < l2 + l3 e l2 > l1 + l3 e l3 < l1 + l2)                    | invalido       |
+| CT-20 | l1 = 0, l2 = 0, l3 = 0 |                                                                 | invalido       |
+| CT-21 | l1 < 0, l2 < 0, l3 < 0 |                                                                 | invalido       |
+
+### Arquivo pom.xml ###
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>avaliacao</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+        </dependency>
+    </dependencies>
+
+</project>
+
+### Arquivo Triangulo.java ###
+
+package br.utfpr.avaliacao;
+
+public class Triangulo {
+
+    /**
+     * Dado três lados de triangulo, realiza a sua classificação com relação aos seus lados
+     *
+     * @param lado1 {int} lado 1 do triangulo
+     * @param lado2 {int} lado 2 do triangulo
+     * @param lado3 {int} lado 3 do triangulo
+     * @return {String} "equilatero" se o triangulo possui três lados iguais
+     *                  "isoceles" se o triangulo possui dois lados iguais
+     *                  "escaleno" se o triangulo possui três lados diferentes
+     */
+    public String classificar(int lado1, int lado2, int lado3) throws TrianguloException {
+
+        if(!validarLadosPositivos(lado1, lado2, lado3)) {
+            throw new TrianguloException("invalido");
+        }
+
+        if(validarSomaLados(lado1, lado2, lado3)) {
+            if(lado1 == lado2 && lado1 == lado3 && lado2 == lado3) {
+                return "equilatero";
+            }
+            if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+                return "isoceles";
+            }
+            return "escaleno";
+        } else {
+            throw new TrianguloException("invalido");
+        }
+    }
+
+    /**
+     * Valida se a soma de dois lados de um triangulo é maior que o terceiro lado
+     * @param lado1 {int} lado 1 do triangulo
+     * @param lado2 {int} lado 2 do triangulo
+     * @param lado3 {int} lado 3 do triangulo
+     * @return {boolean}    true se a soma é maior
+     *                      false se é menor
+     */
+    private boolean validarSomaLados(int lado1, int lado2, int lado3) {
+        return lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2;
+    }
+
+    /**
+     * Valida se os lados do triangulo são positivos
+     * @param lado1 {int} lado 1 do triangulo
+     * @param lado2 {int} lado 2 do triangulo
+     * @param lado3 {int} lado 3 do triangulo
+     * @return {boolean}    true se os lados do triangulo são maiores que zero
+     *                      false se os lados do triangulo são menores que zero
+     */
+    private boolean validarLadosPositivos(int lado1, int lado2, int lado3) {
+        return lado1 > 0 && lado2 > 0 && lado3 > 0;
+    }
+}
+
+### Arquivo TrianguloException.java ###
+
+package br.utfpr.avaliacao;
+
+public class TrianguloException extends Exception {
+    public TrianguloException(String message) {
+        super(message);
+    }
+}
+
+### Arquivo TrianguloTest.java ###
+
 package br.utfpr.avaliacao;
 
 import org.junit.Before;
