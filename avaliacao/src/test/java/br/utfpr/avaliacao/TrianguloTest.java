@@ -96,4 +96,96 @@ public class TrianguloTest {
 
         // validacao
     }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoSeUmLadoForNegativo() throws TrianguloException {
+        // cenario
+        int lado1 = -10, lado2 = 20, lado3 = 20;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoSeSomaDeDoisLadosForIgualAoTerceiro() throws TrianguloException {
+        // cenario
+        int lado1 = 20, lado2 = 20, lado3 = 40;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoSeSomaDeDoisLadosForIgualAoTerceiroPrimeiraPermutacao()
+            throws TrianguloException {
+        // cenario
+        int lado1 = 40, lado2 = 20, lado3 = 20;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoSeSomaDeDoisLadosForIgualAoTerceiroSegundaPermutacao()
+            throws TrianguloException {
+        // cenario
+        int lado1 = 20, lado2 = 40, lado3 = 20;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoSeSomaDeDoisLadosForMenorQueTerceiro() throws TrianguloException {
+        // cenario
+        int lado1 = 20, lado2 = 20, lado3 = 60;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoSeSomaDeDoisLadosForMenorQueTerceiroPrimeiraPermuta()
+            throws TrianguloException {
+        // cenario
+        int lado1 = 60, lado2 = 20, lado3 = 20;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoSeSomaDeDoisLadosForMenorQueTerceiroSegundaPermuta()
+            throws TrianguloException {
+        // cenario
+        int lado1 = 20, lado2 = 60, lado3 = 20;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
+
+    @Test(expected = TrianguloException.class)
+    public void deveLancarExcecaoParaTodosLadosNulos() throws TrianguloException {
+        // cenario
+        int lado1 = 20, lado2 = 60, lado3 = 20;
+
+        //ação
+        String classificacao = triangulo.classificar(lado1, lado2, lado3);
+
+        // validacao
+    }
 }

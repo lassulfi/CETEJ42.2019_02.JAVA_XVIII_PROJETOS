@@ -14,8 +14,8 @@ public class Triangulo {
      */
     public String classificar(int lado1, int lado2, int lado3) throws TrianguloException {
 
-        if(lado1 == 0 || lado2 == 0 || lado3 == 0) {
-            throw new TrianguloException("Triangulo inválido");
+        if(!validarLadosPositivos(lado1, lado2, lado3)) {
+            throw new TrianguloException("invalido");
         }
 
         if(validarSomaLados(lado1, lado2, lado3)) {
@@ -26,8 +26,9 @@ public class Triangulo {
                 return "isoceles";
             }
             return "escaleno";
+        } else {
+            throw new TrianguloException("invalido");
         }
-        return null;
     }
 
     /**
@@ -40,5 +41,17 @@ public class Triangulo {
      */
     private boolean validarSomaLados(int lado1, int lado2, int lado3) {
         return lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2;
+    }
+
+    /**
+     * Valida se os lados do triangulo são positivos
+     * @param lado1 {int} lado 1 do triangulo
+     * @param lado2 {int} lado 2 do triangulo
+     * @param lado3 {int} lado 3 do triangulo
+     * @return {boolean}    true se os lados do triangulo são maiores que zero
+     *                      false se os lados do triangulo são menores que zero
+     */
+    private boolean validarLadosPositivos(int lado1, int lado2, int lado3) {
+        return lado1 > 0 && lado2 > 0 && lado3 > 0;
     }
 }
